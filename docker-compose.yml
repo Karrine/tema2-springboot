@@ -1,0 +1,21 @@
+version: "2.3"
+services:
+    docker-mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=rootpass
+            - MYSQL_DATABASE=tema2
+            - MYSQL_PASSWORD=1q2w3e
+    spring-boot-service:
+        image: tema2-springbootv2
+        depends_on:
+           - docker-mysql
+        ports:
+           - "8000:8080"
+        environment:
+           - DATABASE_HOST=docker-mysql
+           - DATABASE_USER=root
+           - DATABASE_PASSWORD=1q2w3e
+           - DATABASE_NAME=tema2  
+           - DATABASE_PORT=3306
+       
