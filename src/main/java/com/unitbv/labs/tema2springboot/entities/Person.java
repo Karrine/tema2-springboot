@@ -15,10 +15,21 @@ public class Person {
 	private String name;
 	private String email;
 	
+	public Person() {
+		super();
+	}
 	public Person(String name, String email) {
 		super();
 		this.name = name;
 		this.email = email;
+	}
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
